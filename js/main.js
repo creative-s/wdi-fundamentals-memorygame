@@ -1,9 +1,6 @@
 //
 var cards = [
 {
-	cardImage: "images/back.png"
-},
-{
 	rank: "queen",
 	suit:"hearts",
 	cardImage: "images/queen-of-hearts.png"
@@ -31,7 +28,7 @@ var cardsInPlay = [];
 
 function checkForMatch(){
 
-this.setAttribute(cards[cardId].cardImage);
+this.setAttribute(cards[cardId].rank);
 if (cardsInPlay[0] === cardsInPlay[1]) {
  	alert("You found a match!");
 }else {
@@ -56,23 +53,11 @@ function createBoard() {
 	for (var i = 0; i < cards.length; i++) {
 
 		var cardElement = document.createElement('img');
-		cardElement = document.createElement('img');
-		cardElement = document.createElement('img');
-		cardElement = document.createElement('img');
-		cardElement.setAttribute('src' , 'images/back.png');
+		cardElement.setAttribute("src" , 'images/back.png');
 		cardElement.setAttribute('data-id' , i);
 		cardElement.addEventListener('click', flipCard);
-
-
-document.getElementById('board-game').appendChild(cardElement);
-
-
-	}
+		document.getElementById('game-board').appendChild(cardElement);
 };
 
 createBoard(0,1);
-
-
-
-
 
